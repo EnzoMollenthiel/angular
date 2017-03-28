@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+</head>
+
+
+
+<body ng-controller="mainController">
+
+
+    <form>
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" placeholder="Prénom" ng-model="addUser.firstname">
+        </div>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" placeholder="Nom" ng-model="addUser.name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Email" ng-model="addUser.email"> </div>
+        <button type="button" class="btn btn-default" ng-click="add()">Submit</button>
+    </form>
+
+
+    <table>
+        <tr ng-repeat="user in users">
+            <td>{{user.firstname}} {{user.name}} {{user.email}}</td>
+        </tr>
+
+
+    </table>
+
+
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
